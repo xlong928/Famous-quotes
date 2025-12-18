@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日一句 · 勵志</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      color: #ffffff;
+      background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 24px;
+    }
+    .card {
+      max-width: 720px;
+      padding: 32px 28px;
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+    .title {
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      opacity: 0.85;
+      margin-bottom: 16px;
+    }
+    .quote {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .btn {
+      appearance: none;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: rgba(255,255,255,0.9);
+      color: #333;
+    }
+    .btn:hover { background: #ffffff; }
+    .footer {
+      margin-top: 16px;
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="title">TODAY · 一句勵志</div>
+    <div id="quote" class="quote"></div>
+    <button class="btn" onclick="newQuote()">再抽一句</button>
+    <div class="footer">每次開啟或點擊，都是新的提醒</div>
+  </div>
+
+  <script>
+    const quotes = [
+      "你不需要一下子走很遠，只要今天比昨天多走一步。",
+      "真正的力量，是在疲憊時仍然願意溫柔地前進。",
+      "慢一點沒有關係，只要你沒有停下來。",
+      "你已經走過那麼多困難，現在的你，比想像中更有力量。",
+      "不是所有答案都要立刻出現，時間本身就是回應。",
+      "當你願意為自己負責，世界就開始為你讓路。",
+      "今天不完美，但依然值得被好好對待。",
+      "你正在累積的，不只是成果，還有底氣。",
+      "就算看不見結果，每一份用心都沒有白費。",
+      "你可以溫柔，但不必退讓。"
+    ];
+
+    function newQuote() {
+      const q = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById('quote').innerText = q;
+    }
+
+    // 頁面載入時自動抽一句
+    newQuote();
+  </script>
+</body>
+</html>
